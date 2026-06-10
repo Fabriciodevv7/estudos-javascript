@@ -12,3 +12,16 @@ const subTotal = produtos.map(function(produtos) {
 })
 
 console.log(subTotal)
+
+const caros = produtos.filter(function(produtos) {
+    return produtos.preco * produtos.quantidade >= 50
+})
+
+console.log(caros)
+
+const total = produtos.reduce(function(acumulador, produtos) {
+    acumulador = acumulador + produtos.preco * produtos.quantidade
+    return acumulador
+}, 0)
+
+console.log(total)
