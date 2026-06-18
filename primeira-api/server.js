@@ -27,6 +27,19 @@ app.get('/produtos/:id', (req, res) => {
     res.json(produto)
 })
 
+app.post('/produtos', (req, res) => {
+    const id = produtos.length + 1
+    
+    const novoProduto = {
+         id: id,
+         nome: req.body.nome,
+         preco: req.body.preco
+}
+    produtos.push(novoProduto)
+
+    res.status(201).json(novoProduto)
+})
+
 app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000')
 })
